@@ -15,4 +15,11 @@ public class Member {
     private String email;
 
     private String password;
+
+    public Member() {}
+
+    public Member(String username, String email){
+        this.email = email;
+        this.username = username;
+    }
 }
