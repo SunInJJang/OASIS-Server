@@ -1,5 +1,6 @@
 package com.suninjjang.oasis.global.security.auth;
 
+import com.suninjjang.oasis.domain.user.domain.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
