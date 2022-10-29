@@ -1,0 +1,4 @@
+# Query root
+type diary {
+   title:String
+}

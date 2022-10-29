@@ -28,6 +28,10 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     implementation ('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
+    implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:14.0.0'
+
+    // testing facilities
+    testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:14.0.0'
 
 
 }
