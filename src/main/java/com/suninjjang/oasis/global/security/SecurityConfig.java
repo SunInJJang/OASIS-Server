@@ -62,10 +62,14 @@ public class SecurityConfig {
                 .antMatchers("/diary/list").authenticated()
 
                 // question
+                .antMatchers("/question/**").authenticated()
+                .antMatchers("/question/detail/**").authenticated()
+                .antMatchers("/question/list/**").authenticated()
 
                 // mypage
 
                 // heart
+
 
                 .anyRequest().denyAll()
                 .and()
