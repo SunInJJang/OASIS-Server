@@ -55,6 +55,11 @@ public class SecurityConfig {
                 .antMatchers("/user/setting/reminder/anniversarytime").authenticated()
 
                 // diary
+                .antMatchers("/diary/create").authenticated()
+                .antMatchers("/diary/edit/**").authenticated()
+                .antMatchers("/diary/detail/**").authenticated()
+                .antMatchers("/diary/delete/**").authenticated()
+                .antMatchers("/diary/list").authenticated()
 
                 // question
 
