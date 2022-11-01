@@ -67,6 +67,7 @@ public class SecurityConfig {
                 .antMatchers("/question/list/**").authenticated()
 
                 // mypage
+                .antMatchers("/mypage/").authenticated()
 
                 // heart
 
