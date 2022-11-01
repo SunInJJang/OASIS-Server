@@ -48,6 +48,11 @@ public class SecurityConfig {
                 .antMatchers("/auth/find/id").permitAll()
 
                 // user
+                .antMatchers("/user/withdrawal").authenticated()
+                .antMatchers("/user/setting/").authenticated()
+                .antMatchers("/user/setting/change/nickname").authenticated()
+                .antMatchers("/user/setting/change/password").authenticated()
+                .antMatchers("/user/setting/reminder/anniversarytime").authenticated()
 
                 // diary
 
