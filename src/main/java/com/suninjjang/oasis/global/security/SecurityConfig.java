@@ -40,10 +40,12 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .requestMatchers(CorsUtils::isPreFlightRequest).permitAll() //cors preflight 요청에 대해 401 에러 해결을 위해
 
-                .anyRequest().denyAll()
-                .and()
-
                 // auth
+                .antMatchers("/auth/refresh").permitAll()
+                .antMatchers("/auth/signup").permitAll()
+                .antMatchers("/auth/login").permitAll()
+                .antMatchers("/auth/logout").permitAll()
+                .antMatchers("/auth/find/id").permitAll()
 
                 // user
 
@@ -54,6 +56,10 @@ public class SecurityConfig {
                 // mypage
 
                 // heart
+
+                .anyRequest().denyAll()
+                .and()
+
 
 
 
