@@ -41,36 +41,36 @@ public class SecurityConfig {
                 .requestMatchers(CorsUtils::isPreFlightRequest).permitAll() //cors preflight 요청에 대해 401 에러 해결을 위해
 
                 // auth
-                .antMatchers("/auth/refresh").permitAll()
-                .antMatchers("/auth/signup").permitAll()
-                .antMatchers("/auth/login").permitAll()
-                .antMatchers("/auth/logout").authenticated()
-                .antMatchers("/auth/find/id").permitAll()
+                .antMatchers("/auth/refresh").permitAll() // token 재발급
+                .antMatchers("/auth/signup").permitAll() // 회원가입
+                .antMatchers("/auth/login").permitAll() // 로그인
+                .antMatchers("/auth/logout").authenticated() // 로그아웃
+                .antMatchers("/auth/find/id").permitAll() // 아이디 찾기(이메일통해)
 
                 // user
-                .antMatchers("/user/withdrawal").authenticated()
-                .antMatchers("/user/setting/").authenticated()
-                .antMatchers("/user/setting/change/nickname").authenticated()
-                .antMatchers("/user/setting/change/password").authenticated()
-                .antMatchers("/user/setting/reminder/anniversarytime").authenticated()
+                .antMatchers("/user/withdrawal").authenticated() // 회원탈퇴
+                .antMatchers("/user/setting/").authenticated() // 설정 메인
+                .antMatchers("/user/setting/change/nickname").authenticated() // 닉네임 변경
+                .antMatchers("/user/setting/change/password").authenticated() // 비밀번호 변경
+                .antMatchers("/user/setting/reminder/anniversarytime").authenticated() // 기념일 알림 시간 변경
 
                 // diary
-                .antMatchers("/diary/create").authenticated()
-                .antMatchers("/diary/edit/**").authenticated()
-                .antMatchers("/diary/detail/**").authenticated()
-                .antMatchers("/diary/delete/**").authenticated()
-                .antMatchers("/diary/list").authenticated()
+                .antMatchers("/diary/create").authenticated() // 일기 생성
+                .antMatchers("/diary/edit/**").authenticated() // 일기 수정
+                .antMatchers("/diary/detail/**").authenticated() // 일기 상세
+                .antMatchers("/diary/delete/**").authenticated() // 일기 삭제
+                .antMatchers("/diary/list").authenticated() // 일기 목록
 
                 // question
-                .antMatchers("/question/**").authenticated()
-                .antMatchers("/question/detail/**").authenticated()
-                .antMatchers("/question/list/**").authenticated()
+                .antMatchers("/question/**").authenticated() // 질문 답변
+                .antMatchers("/question/detail/**").authenticated() // 질문 상세
+                .antMatchers("/question/list/**").authenticated() // 질문 목록
 
                 // mypage
-                .antMatchers("/mypage/").authenticated()
+                .antMatchers("/mypage/").authenticated() // 마이페이지(메인페이지)
 
                 // heart
-                .antMatchers("/heart/").authenticated()
+                .antMatchers("/heart/").authenticated() // 하트 페이지
 
                 .anyRequest().denyAll()
                 .and()
