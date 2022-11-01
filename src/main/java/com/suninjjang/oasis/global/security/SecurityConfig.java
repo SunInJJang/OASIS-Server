@@ -70,7 +70,7 @@ public class SecurityConfig {
                 .antMatchers("/mypage/").authenticated()
 
                 // heart
-
+                .antMatchers("/heart/").authenticated()
 
                 .anyRequest().denyAll()
                 .and()
