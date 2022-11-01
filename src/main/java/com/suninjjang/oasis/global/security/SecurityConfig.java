@@ -44,7 +44,7 @@ public class SecurityConfig {
                 .antMatchers("/auth/refresh").permitAll()
                 .antMatchers("/auth/signup").permitAll()
                 .antMatchers("/auth/login").permitAll()
-                .antMatchers("/auth/logout").permitAll()
+                .antMatchers("/auth/logout").authenticated()
                 .antMatchers("/auth/find/id").permitAll()
 
                 // user
