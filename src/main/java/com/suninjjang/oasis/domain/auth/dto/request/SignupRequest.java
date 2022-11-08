@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public class SignupRequestDto {
+public class SignupRequest {
     private final String userId;
     private final String password;
     private final String email;
