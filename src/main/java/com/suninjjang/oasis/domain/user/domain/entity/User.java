@@ -1,11 +1,17 @@
 package com.suninjjang.oasis.domain.user.domain.entity;
 
-import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @Document(collation = "user")
-@Data
+@Getter
+@Builder
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     private String id;
@@ -16,10 +22,5 @@ public class User {
 
     private String password;
 
-    public User() {}
-
-    public User(String username, String email){
-        this.email = email;
-        this.username = username;
-    }
+    private String datedDate;
 }
