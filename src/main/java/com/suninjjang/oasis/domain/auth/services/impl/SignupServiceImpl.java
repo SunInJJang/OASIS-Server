@@ -17,7 +17,7 @@ public class SignupServiceImpl implements SignupService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    public void Signup(SignupRequest signupRequest) {
+    public void signup(SignupRequest signupRequest) {
         if(userRepository.findUserById(signupRequest.getUserId()).isPresent()){
             User user = User.builder()
                     .id(signupRequest.getUserId())
