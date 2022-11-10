@@ -8,4 +8,5 @@ import lombok.Getter;
 @AllArgsConstructor
 public class UserNotFoundException extends RuntimeException{
     private ErrorCode errorCode;
+  
 }
