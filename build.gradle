@@ -27,12 +27,13 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
-    implementation ('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
-    implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:14.0.0'
 
-    // testing facilities
-    implementation 'com.graphql-java:graphql-spring-boot-starter:5.0.2'
-    implementation 'com.graphql-java:graphql-java-tools:5.2.4'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+    implementation 'mysql:mysql-connector-java'
+
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+    implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
 
 
 }

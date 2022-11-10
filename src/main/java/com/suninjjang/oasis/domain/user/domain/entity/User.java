@@ -1,25 +1,42 @@
 package com.suninjjang.oasis.domain.user.domain.entity;
 
-import lombok.Data;
-import org.springframework.data.annotation.Id;
+import com.mongodb.lang.Nullable;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @Document(collation = "user")
-@Data
+@Getter
+@Builder
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     private String id;
 
+    @Nullable()
     private String username;
 
     private String email;
 
     private String password;
 
-    public User() {}
+    @Nullable()
+    private String datedDate;
 
-    public User(String username, String email){
-        this.email = email;
-        this.username = username;
+    private String refreshToken;
+
+    public void updateRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
     }
+
+    public User(String id, String refreshToken){
+        this.id = id;
+        this.refreshToken = refreshToken;
+    }
+
+
 }
