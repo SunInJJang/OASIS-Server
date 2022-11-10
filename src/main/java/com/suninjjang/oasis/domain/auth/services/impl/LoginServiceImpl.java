@@ -12,7 +12,6 @@ import com.suninjjang.oasis.global.error.ErrorCode;
 import com.suninjjang.oasis.global.security.exception.InvalidTokenException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 

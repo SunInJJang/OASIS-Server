@@ -7,9 +7,7 @@ import com.suninjjang.oasis.domain.user.domain.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
 @Service
 @RequiredArgsConstructor
 public class SignupServiceImpl implements SignupService {

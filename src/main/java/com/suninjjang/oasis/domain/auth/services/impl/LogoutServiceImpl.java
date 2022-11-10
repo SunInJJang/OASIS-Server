@@ -4,9 +4,7 @@ import com.suninjjang.oasis.domain.auth.services.LogoutService;
 import com.suninjjang.oasis.global.util.UserUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
 @Service
 @RequiredArgsConstructor
 public class LogoutServiceImpl implements LogoutService {
