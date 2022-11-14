@@ -7,10 +7,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Document(collation = "user")
-@Getter
-@Builder
 @Entity
+@Document(collation = "user")
+@Getter @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {

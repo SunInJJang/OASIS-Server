@@ -33,11 +33,11 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest){
+    public ResponseEntity<TokenResponse> login(@RequestBody LoginRequest loginRequest){
         LoginDto loginDto = loginService.login(loginRequest);
         LoginResponse loginResponse = authConverter.toLoginResponse(loginDto);
         TokenResponse tokenResponse = new TokenResponse(loginResponse.getTokenResponse());
-        return new ResponseEntity(tokenResponse,loginResponse.getHttpStatus());
+        return new ResponseEntity<>(tokenResponse,loginResponse.getHttpStatus());
     }
 
     @PutMapping("/logout")

@@ -16,7 +16,7 @@ public class SignupServiceImpl implements SignupService {
 
     @Override
     public void signup(SignupRequest signupRequest) {
-        if(userRepository.findUserById(signupRequest.getUserId()).isPresent()){
+        if(userRepository.existsUserById(signupRequest.getUserId())){
             User user = User.builder()
                     .id(signupRequest.getUserId())
                     .password(passwordEncoder.encode(signupRequest.getPassword()))
