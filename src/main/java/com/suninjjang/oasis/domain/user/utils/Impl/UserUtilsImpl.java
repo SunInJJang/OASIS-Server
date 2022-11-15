@@ -15,12 +15,12 @@ public class UserUtilsImpl implements UserUtils {
     private final UserRepository userRepository;
     @Override
     public User getCurrentUser() {
-        String id = SecurityContextHolder.getContext().getAuthentication().getName();
-        return getUserById(id);
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        return getUserById(userId);
     }
 
     @Override
-    public User getUserById(String id) {
-        return userRepository.findUserById(id).orElseThrow(() -> new UserNotFoundException(ErrorCode.USER_NOT_FOUND));
+    public User getUserById(String userId) {
+        return userRepository.findUserById(userId).orElseThrow(() -> new UserNotFoundException(ErrorCode.USER_NOT_FOUND));
     }
 }
