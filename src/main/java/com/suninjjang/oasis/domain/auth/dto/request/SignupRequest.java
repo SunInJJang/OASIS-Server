@@ -10,6 +10,6 @@ public class SignupRequest {
     private final String userId;
     private final String password;
     private final String email;
-    private final String nickname;
+    private final String username;
     private final String datedDate;
 }

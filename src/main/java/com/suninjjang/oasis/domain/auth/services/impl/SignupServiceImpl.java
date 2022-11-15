@@ -16,11 +16,12 @@ public class SignupServiceImpl implements SignupService {
 
     @Override
     public void signup(SignupRequest signupRequest) {
-        if(userRepository.existsUserById(signupRequest.getUserId())){
+        if(!userRepository.existsUserById(signupRequest.getUserId())){
             User user = User.builder()
                     .id(signupRequest.getUserId())
                     .password(passwordEncoder.encode(signupRequest.getPassword()))
                     .email(signupRequest.getEmail())
+                    .username(signupRequest.getUsername())
                     .datedDate(signupRequest.getDatedDate())
                     .build();
             userRepository.save(user);

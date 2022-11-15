@@ -26,17 +26,17 @@ public class LoginServiceImpl implements LoginService {
             LoginRequest login = authUtils.generateLoginResponse(loginRequest.getUserId(), loginRequest.getPassword());
 
             // 토큰 생성
-            String id = login.getUserId();
-            TokenDto tokenResponse = authUtils.generateTokenResponse(id);
+            String userId = login.getUserId();
+            TokenDto tokenResponse = authUtils.generateTokenResponse(userId);
 
             //유저가 존재할때
-            if (userRepository.existsUserById(id)) {
-                User user = userRepository.findUserById(id).orElseThrow(()-> new UserNotFoundException(ErrorCode.USER_NOT_FOUND));
+            if (userRepository.existsUserById(userId)) {
+                User user = userRepository.findUserById(userId).orElseThrow();
                 user.updateRefreshToken(tokenResponse.getRefreshToken());
                 httpStatus = HttpStatus.OK;
             } else { //유저가 존재하지 않을때
                 httpStatus = HttpStatus.CREATED;
-                User user = new User(id, tokenResponse.getRefreshToken());
+                User user = new User(userId, tokenResponse.getRefreshToken());
                 userRepository.save(user);
             }
             return new LoginDto(tokenResponse, httpStatus);
